@@ -198,6 +198,12 @@ export HOMEBREW_NO_ANALYTICS_MESSAGE_OUTPUT=1
 unset HAVE_SUDO_ACCESS # unset this from the environment
 
 have_sudo_access() {
+  echo "START"
+  sudo -n -l mkdir &>/dev/null
+  echo $?
+  echo "STOP"
+
+
   if [[ ! -x "/usr/bin/sudo" ]]
   then
     return 1
